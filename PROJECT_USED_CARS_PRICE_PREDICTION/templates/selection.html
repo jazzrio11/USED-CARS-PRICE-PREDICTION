@@ -1,0 +1,20 @@
+<!-- selection_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selection Form</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="element">Select an element:</label>
+        <select name="element" id="element">
+            {% for element in elements %}
+                <option value="{{ element }}">{{ element }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

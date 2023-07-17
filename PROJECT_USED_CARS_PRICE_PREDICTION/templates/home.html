@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+<form action="add" method="post">
+    {% csrf_token %}
+    enter num1: <input type="number" name="num1">
+    <br>
+    enter num2: <input type="number" name="num2">
+    <input type="submit">
+
+</form>
+<br>
+<form action="show" method="post">
+        {% csrf_token %}
+        <label for="element">Select an element:</label>
+        <select name="element" id="element">
+            {% for element in elements %}
+                <option value="{{ element }}">{{ element }} </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+
+</form>
+
+
+
+</body>
+</html>
